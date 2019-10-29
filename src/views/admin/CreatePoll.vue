@@ -158,6 +158,8 @@ export default {
         errorMsg = 'Please enter a poll title';
       } else if (!pollData.date) {
         errorMsg = 'Please choose a workshop date';
+      } else if (new Date(pollData.date) < Date.now()) {
+        errorMsg = 'Please choose a workshop date in the future';
       } else if (!pollData.questions) {
         errorMsg = 'Please add at least one question';
       } else {
